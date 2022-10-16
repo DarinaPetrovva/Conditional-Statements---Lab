@@ -1,0 +1,55 @@
+using System;
+
+namespace zad_8
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double h = double.Parse(Console.ReadLine());
+            double p = double.Parse(Console.ReadLine());
+            double d = double.Parse(Console.ReadLine());
+            double b = double.Parse(Console.ReadLine());
+            double m = double.Parse(Console.ReadLine());
+            double c = double.Parse(Console.ReadLine());
+            double br = p + d + b + m + c;
+            double prize = p * 2.60 + d * 3 + b * 4.10 + m * 8.20 + c * 2;
+            //20*2.60 + 25*3 + 30*4.10 + 50*8.20 + 10*2 = 680
+            if (br>=50)
+            {
+                double namalenie= 0.25 * prize;
+                double krprize = prize - namalenie;
+                double naem = krprize * 0.1;
+                double pechalba = krprize - naem;
+                if (pechalba >= h)
+                {
+                    double ost1 = pechalba - h;
+                    Console.WriteLine("Yes! " + $"{ost1:f2}" + " lv left.");
+                }
+                else
+                {
+                    double moneyn = h - pechalba;
+                    Console.WriteLine("Not enough money! " + $"{moneyn:f2}" + " lv needed.");
+                }
+            }
+            else
+            {
+                double naem1 = prize * 0.1;
+                double pechalba1 = prize - naem1;
+                if (pechalba1>= h)
+                {
+                    double ost2 = pechalba1 - h;
+                    Console.WriteLine("Yes! " + $"{ost2:f2}" + " lv left.");
+                }
+                else
+                {
+                    double mn2 = h - pechalba1;
+                    Console.WriteLine("Not enough money! " + $"{mn2:f2}" + " lv needed.");
+                }
+            }
+                
+
+
+        }
+    }
+}
