@@ -1,0 +1,38 @@
+using System;
+
+namespace zad_7
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string s = Console.ReadLine();
+            if (s == "square")
+            {
+                double kside = double.Parse(Console.ReadLine());
+                double sk = kside * kside;
+                Console.WriteLine($"{sk:f3}");
+            }
+            if (s == "rectangle")
+            {
+                double pside1 = double.Parse(Console.ReadLine());
+                double pside2 = double.Parse(Console.ReadLine());
+                double sp = pside1 * pside2;
+                Console.WriteLine($"{sp:f3}");
+            }
+            if (s == "circle")
+            {
+                double r = double.Parse(Console.ReadLine());
+                double skr = Math.Pow(r,2) * Math.PI;
+                Console.WriteLine($"{skr:f3}");
+            }
+            if (s == "triangle")
+            {
+                double sidet = double.Parse(Console.ReadLine());
+                double heightt = double.Parse(Console.ReadLine());
+                double st = (sidet * heightt) / 2;
+                Console.WriteLine($"{st:f3}");
+            }
+        }
+    }
+}
